@@ -1,4 +1,4 @@
-package com.example.ksb.bid_it;
+package com.example.ksb.bidit0;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
