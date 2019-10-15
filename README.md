@@ -1,0 +1,2 @@
+# bidit
+mini project
