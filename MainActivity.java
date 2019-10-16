@@ -1,4 +1,4 @@
-package com.example.homedashboard;
+package com.example.adminhomepage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
