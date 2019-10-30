@@ -11,8 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+
 
 public class MainActivity1 extends Activity implements OnClickListener
 {
@@ -35,14 +34,17 @@ public class MainActivity1 extends Activity implements OnClickListener
         email=(EditText) findViewById(R.id.editText5);
         username=(EditText) findViewById(R.id.editText6);
         password=(EditText)findViewById(R.id.editText7);
-        register=(Button)findViewById(R.id.button);
-        verify=(Button)findViewById(R.id.button2);
+
+        register=(Button)findViewById(R.id.button3);
+        verify=(Button)findViewById(R.id.button);
 
         register.setOnClickListener(this);
         verify.setOnClickListener(this);
 
         db=openOrCreateDatabase("UserDB", Context.MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS Registration(name VARCHAR,age INTEGER,phone INTEGER,email VARCHAR,username VARCHAR,password VARCHAR);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Registration(name VARCHAR,age INTEGER,phone INTEGER,email VARCHAR,username VARCHAR,password VARCHAR,userid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL);");
+
+
     }
     public void onClick(View view)
     {
@@ -59,22 +61,30 @@ public class MainActivity1 extends Activity implements OnClickListener
             }
             db.execSQL("INSERT INTO Registration VALUES('" + name.getText() + "','" + age.getText() +
                     "','" + phone.getText() + "','" + email.getText() + "','" + username.getText() + "','" + password.getText() + "');");
-            showMessage("Success", "Registration successful");
+           showMessage("Success", "Registration successful");
             clearText();
+            Intent intent=new Intent(MainActivity1.this,login1.class);
+            startActivity(intent);
+
         }
+
 
 
         if (view == verify)
         {
+
+
             Cursor c = db.rawQuery("SELECT * FROM  Registration", null);
-            if (c.getCount() == 0)
+            if (c.moveToFirst())
             {
+
 
                 showMessage("Error", "No record found");
                 return;
             }
             StringBuffer buffer = new StringBuffer();
-            while (c.moveToNext()) {
+            while (c.moveToNext())
+            {
                 buffer.append("Name:" + c.getString(0) + "\n");
                 buffer.append("Age:" + c.getString(1) + "\n");
 
