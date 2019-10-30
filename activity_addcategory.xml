@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/iop"
     tools:context=".Addcategory">
 
     <TextView
@@ -69,9 +70,9 @@
         app:layout_constraintTop_toBottomOf="@+id/editText9" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button3"
         android:layout_width="93dp"
-        android:layout_height="40dp"
+        android:layout_height="59dp"
         android:layout_marginLeft="55dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="53dp"
@@ -80,17 +81,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="103dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginRight="85dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="52dp"
-        android:text="CANCEL"
+        android:id="@+id/button23"
+        android:layout_width="107dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="79dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="53dp"
+        android:text="@string/Button23"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/editText10" />
 
 </android.support.constraint.ConstraintLayout>
