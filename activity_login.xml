@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_register"
-    android:gravity="center"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    android:gravity="center"
+    tools:context=".login">
 
     <TextView
-        android:id="@+id/regi"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -18,24 +18,10 @@
 
         android:ems="10"
         android:gravity="center"
-        android:text="REGISTRATION"
-        android:textColor="#0C0C0C"
+        android:text="LOGIN"
+        android:textColor="#030303"
         android:textSize="30sp"
         app:fontFamily="sans-serif-condensed-medium" />
-
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="Enter Name"
-        android:textColor="#000"
-        android:ems="10"
-        android:layout_below="@+id/regi"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/editName"
-        android:gravity="center"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -44,23 +30,11 @@
         android:hint="Enter Email"
         android:textColor="#000"
         android:ems="10"
-        android:layout_below="@+id/editName"
+
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:id="@+id/editEmail"
-        android:gravity="center"/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:hint="Enter Age"
-        android:textColor="#000"
-        android:ems="10"
-        android:layout_below="@+id/editEmail"
-        android:inputType="number"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/editAge"
+        android:layout_below="@+id/login"
         android:gravity="center"/>
 
     <EditText
@@ -70,33 +44,28 @@
         android:hint="Enter Password"
         android:textColor="#000"
         android:ems="10"
-        android:layout_below="@+id/editAge"
+        android:layout_below="@+id/editEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:id="@+id/editPassword"
         android:gravity="center"/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="Re_enter Password"
-        android:textColor="#000"
-        android:ems="10"
-        android:layout_below="@+id/editPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/editPasswordd"
-        android:gravity="center"/>
-
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonLogin"
+        android:layout_below="@+id/editPassword"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:text="Log IN "/>
+
+    <Button
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonRegister"
-        android:layout_below="@+id/editPasswordd"
+        android:layout_below="@+id/buttonLogin"
         android:layout_marginTop="20dp"
-        android:gravity="center"
         android:background="@android:color/transparent"
-        android:text="Register "/>
+        android:text="Not Log IN | Register From here "/>
 
 </RelativeLayout>
