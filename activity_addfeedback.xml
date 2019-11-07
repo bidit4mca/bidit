@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Addfeedback">
+
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="284dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/message"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-113dp"
+        android:ems="10"
+        android:hint="subject"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="113dp"
+        android:ems="10"
+        android:hint="message"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="202dp"
+        android:onClick="send_click"
+        android:text="submit"
+        tools:ignore="OnClick" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/submit"
+        android:layout_marginTop="18dp"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:text="ADD FEEDBACK" />
+</RelativeLayout>
