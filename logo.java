@@ -1,4 +1,4 @@
-package com.example.ksb.bidding;
+package com.example.ksb.biddings5;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -21,7 +21,7 @@ public class logo extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(logo.this,MainActivity.class);
+                Intent intent=new Intent(logo.this,login.class);
                 startActivity(intent);
                 finish();
             }
