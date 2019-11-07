@@ -1,74 +1,38 @@
-package com.example.myapplica;
+package com.example.a20140550.sharemenu;
 
-
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
-import android.app.AlertDialog.Builder;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
-
-public class MainActivity extends Activity implements OnClickListener
-{
-    EditText subject,message;
-    Button submit;
-    SQLiteDatabase db;
-
-
+public class MainActivity extends AppCompatActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        subject=(EditText) findViewById(R.id.subject);
-        message=(EditText)findViewById(R.id.message);
-
-        submit=(Button) findViewById(R.id.submit);
-
-
-        submit.setOnClickListener(this);
-
-
-        db=openOrCreateDatabase("UserDB", Context.MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS Feedback(subject VARCHAR,message VARCHAR);");
     }
-    public void onClick(View view) {
 
-        if (view == submit) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.menu_layout,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-            if (subject.getText().toString().trim().length() == 0 ||
-                    message.getText().toString().trim().length() == 0) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
-                showMessage("Error", "Please enter all values");
-                return;
-            }
-            db.execSQL("INSERT INTO Feedback VALUES('" + subject.getText() + "','" + message.getText() + "');");
-            showMessage("Success", "Added successful");
-            clearText();
+        if(item.getItemId()==R.id.FeedbackID)
+        {
+           Intent intent=new Intent(getApplicationContext(),FeedbackActivity.class);
+           startActivity(intent);
         }
+        return super.onOptionsItemSelected(item);
     }
 
-
-
-    public void showMessage(String title,String message)
-    {
-        Builder builder=new Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
-    public void clearText()
-    {
-        subject.setText("");
-        message.setText("");
-
-    }
 }
